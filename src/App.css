@@ -1,0 +1,33 @@
+.app {
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px 20px;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.app form {
+    width: 50%;
+}
+
+.app form input {
+    margin-right: 10px;
+}
+
+.app ul {
+    padding: 0px;
+    width: 50%;
+}
+
+.app ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app ul li button {
+    margin-left: 10px;
+}

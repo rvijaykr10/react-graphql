@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation, gql } from "@apollo/client";
+import './App.css'
 
 // GraphQL Queries and Mutations
 const GET_BOOKS = gql`
@@ -102,10 +103,10 @@ const App = () => {
   const books = data.books.dataList;
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="app">
       <h1>Books</h1>
 
-      <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
+      <form onSubmit={handleSubmit} >
         {isEdit && <input type="hidden" name="id" value={formData.id} />}
         <input
           type="text"
@@ -130,11 +131,15 @@ const App = () => {
         <p>No books found.</p>
       ) : (
         <ul>
-          {books.map((book) => (
+          {books.map((book, index) => (
             <li key={book.id}>
-              <strong>{book.title}</strong> by {book.author}{" "}
-              <button onClick={() => handleEdit(book)}>Edit</button>
-              <button onClick={() => handleDelete(book.id)}>Delete</button>
+              <p>
+                {index + 1} - <strong>{book.title}</strong> by {book.author}
+              </p>
+              <div>
+                <button onClick={() => handleEdit(book)}>Edit</button>
+                <button onClick={() => handleDelete(book.id)}>Delete</button>
+              </div>
             </li>
           ))}
         </ul>
