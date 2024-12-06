@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from "./App";
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_API_URL,
+  uri: "https://python-graphql.onrender.com/graphql",
   cache: new InMemoryCache(),
 });
 
